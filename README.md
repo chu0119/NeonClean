@@ -1,6 +1,9 @@
 # NeonClean（霓虹清理）
 
 智能化电脑垃圾清理工具（Windows）。提供“推荐/可选”分级的安全清理、进度与取消、现代霓虹风 UI。
+<img width="1629" height="1072" alt="image" src="https://github.com/user-attachments/assets/4375bb6e-581e-4015-9ac7-af6f6a003093" />
+<img width="1650" height="1080" alt="image" src="https://github.com/user-attachments/assets/9f472217-384b-4453-b6f1-c27d7d2c5dec" />
+<img width="1629" height="1075" alt="image" src="https://github.com/user-attachments/assets/89b9bb80-4d7f-4847-b654-01bb3991f7e6" />
 
 ## 特性
 - 智能扫描常见垃圾：临时目录、浏览器/应用缓存、回收站、缩略图与系统更新缓存
@@ -73,4 +76,5 @@ npm run dist:win
 
 ## 安全与隐私
 - 仅访问本机缓存/临时目录，不收集或上传任何个人数据
+
 - 清理逻辑忽略被占用文件，尽量避免对系统/软件造成影响
