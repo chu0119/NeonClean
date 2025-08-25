@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>NeonClean - 智能清理</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="titlebar drag">
+    <div class="app-brand nodrag">
+      <div class="logo-dot"></div>
+      <h1>NeonClean</h1>
+      <span id="status" class="pill pill-idle">空闲</span>
+    </div>
+    <div class="actions nodrag">
+      <button id="btnScan" class="btn primary">开始扫描</button>
+      <button id="btnCancel" class="btn ghost" disabled>取消</button>
+      <div class="divider"></div>
+      <button id="btnSelectRecommended" class="btn ghost" title="仅勾选推荐项（安全）">全选推荐</button>
+      <button id="btnClean" class="btn danger" disabled>一键清理</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="left-panel card">
+      <div class="ring-wrap">
+        <div id="progressRing" class="ring" style="--p:0">
+          <div class="ring-core">
+            <div id="progressLabel" class="ring-text">0%</div>
+            <div id="progressSub" class="ring-sub">等待扫描</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">可释放空间</div>
+          <div id="totalSize" class="stat-value">0 B</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">推荐（安全）</div>
+          <div id="safeCount" class="stat-value">0 项</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">可选（进阶）</div>
+          <div id="optionalCount" class="stat-value">0 项</div>
+        </div>
+      </div>
+
+      <div id="cleanSummary" class="summary hidden">
+        <div class="summary-title">清理完成</div>
+        <div class="summary-body">
+          <span class="icon-rocket">🚀</span>
+          已释放 <span id="freedSize" class="hl">0 B</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="right-panel card">
+      <div class="table-head">
+        <div class="th col-check">
+          <input type="checkbox" id="checkAll" />
+        </div>
+        <div class="th col-name">项目</div>
+        <div class="th col-type">类型</div>
+        <div class="th col-size">大小</div>
+        <div class="th col-hint">说明</div>
+      </div>
+      <div id="results" class="table-body">
+        <div class="placeholder">
+          <div class="spark"></div>
+          <div class="placeholder-text">点击“开始扫描”以检测可清理项目</div>
+        </div>
+        <div id="resultsBody"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    小提示：推荐（安全）为低风险清理；可选（进阶）涉及系统缓存，清理后会自动重建。
+  </footer>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>
